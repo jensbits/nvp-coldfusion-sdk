@@ -3,7 +3,7 @@
 CallerService.cfc
 This ColdFusion component reused by all sample page to get credential information and 
 it has getNVPResponse method which takes nvpString as parameter and return Nvpresponse 
-as CF Struct object. using this object we can pring the response values in Display.cfm page
+as CF Struct object. using this object we can display the response values
 */
 component output="false" {
 
@@ -25,7 +25,7 @@ component output="false" {
 			httpService.addParam(type="formfield",name="#key#",value="#requestData[key]#",encoded="yes"); 
 		}
 		
-		result = httpService.send().getPrefix(); 
+		var result = httpService.send().getPrefix(); 
 
 		return result.filecontent;
 	}
@@ -35,16 +35,16 @@ component output="false" {
 		var keyValStruct = StructNew();
 		var keys = "";
 		var Values = "";
-		nvpArray = ArrayNew(1) ;
-		keyArray = ArrayNew(1) ;
-		valueArray = ArrayNew(1) ;
-		key = "";
-		value = "";
-		currentValue = "";
-		tempVal = "";
-		count = 1 ;
-		tempvalue = "";
-		lennvp =  0;
+		var nvpArray = ArrayNew(1) ;
+		var keyArray = ArrayNew(1) ;
+		var valueArray = ArrayNew(1) ;
+		var key = "";
+		var value = "";
+		var currentValue = "";
+		var tempVal = "";
+		var count = 1 ;
+		var tempvalue = "";
+		var lennvp =  0;
 		
 		for (i=1;i LTE len(nvpString);i=i+1)
 		{ 
