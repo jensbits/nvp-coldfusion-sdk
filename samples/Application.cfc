@@ -8,11 +8,12 @@
 component output="false" {
 	
 	/* **************************** APPLICATION VARIABLES **************************** */
-	THIS.name = "NVP-Sample3";
+	THIS.name = "NVP-Sample";
 	THIS.applicationTimeout = createTimeSpan(0, 2, 0, 0);
     
     
-    customtagpaths = "#getDirectoryFromPath(ExpandPath('../lib/'))#";
+    customtagpaths = "{#getDirectoryFromPath(ExpandPath('../lib/'))#,#getDirectoryFromPath(ExpandPath('../lib/services/'))#}";
+	
 	THIS.customTagPaths = customtagpaths; 
 	
 	THIS.serverSideFormValidation = true;
