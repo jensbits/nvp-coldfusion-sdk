@@ -1,9 +1,8 @@
 <cfscript>
 /*
-CallerService.cfc
-This ColdFusion component reused by all sample page to get credential information and 
-it has getNVPResponse method which takes nvpString as parameter and return Nvpresponse 
-as CF Struct object. using this object we can pring the response values in Display.cfm page
+DisplayService.cfc
+This ColdFusion component reused by all sample page to display the returned
+name value response as well as error messages
 */
 component output="false" {
 

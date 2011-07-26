@@ -1,5 +1,4 @@
 <cfscript>
-/** @accessors true */
 
 component {
 
@@ -44,7 +43,6 @@ component {
 	
 	
 	public struct  function setBalanceData(required struct request,required struct data) {
-	
 		var result = structNew();
 		
 		structAppend(result,request,false);
@@ -59,6 +57,9 @@ component {
 		var	caller = createObject("CallerService");
 	
 		var result = structNew();
+		var email = "";
+		var amt = "";
+		var uniqueid = "";
 		
 		structAppend(result,form,false);
 		structAppend(result,request,false);
@@ -71,10 +72,10 @@ component {
 		var noteArray = ListToArray(form.note);
 		var size = ArrayLen(receivermailArray);
 		
-		note = caller.populateEmptyValue(noteORuid=#noteArray#,size=#size#);
+		var note = caller.populateEmptyValue(noteORuid=#noteArray#,size=#size#);
 		noteArray = note;
 
-		uid = caller.populateEmptyValue(noteORuid=#uidArray#,size=#size#);
+		var uid = caller.populateEmptyValue(noteORuid=#uidArray#,size=#size#);
 		uidArray = uid;
 		
 		for (i=1; i LTE size; i = i+1)
@@ -102,14 +103,13 @@ component {
 	public struct  function setTransactionSearchData(required struct form,required struct request,required struct data) {
 	
 		var result = structNew();
+		var toDate = '';
 		
 		structAppend(result,form,false);
 		structAppend(result,request,false);
 		structAppend(result,data,false);
 		result.subject = request.UNIPAYSUBJECT;
 		
-		
-
     	var fromDate = DateFormat(Form.startDateStr, "mm-dd-yyyy");
     	var month = month(fromDate);
     	var day = day(fromDate);
@@ -117,7 +117,7 @@ component {
     	result.STARTDATE = year &"-"& month &"-"& day & "T00:00:00Z";
     	if(Form.endDateStr IS NOT "")
 		{
-			var toDate = DateFormat(#Form.endDateStr#, "mm-dd-yyyy");
+			toDate = DateFormat(#Form.endDateStr#, "mm-dd-yyyy");
 	    	month = month(toDate);
 	    	day = day(toDate);
 	    	year = year(toDate);
@@ -144,8 +144,6 @@ component {
 		return result;
 	}
 	
-	
-	
 	public struct  function setReauthorizationData(required struct form,required struct request,required struct data) {
 	
 		var result = structNew();
@@ -157,8 +155,6 @@ component {
 		
 		return result;
 	}
-	
-	
 	
 }
 </cfscript>

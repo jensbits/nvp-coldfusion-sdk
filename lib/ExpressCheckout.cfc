@@ -1,5 +1,4 @@
 <cfscript>
-/** @accessors true */
 
 component {
 
