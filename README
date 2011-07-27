@@ -4,7 +4,7 @@ System Requirements
 ColdFusion 9 and above
 Railo 3.2 and above
 
-This is a rewrite of the name-value pair SDK. Components are written in full cfscript which is only supported by newer CFML engines. If you're using an older version of one of the CFML engines, please use the previous version of the name value pair SDK.
+This is a rewrite of the name-value pair SDK. Components are written in full cfscript which is only supported by newer CFML engines. If you're using an older version of one of the CFML engines, please use the previous version of the name value pair SDK. https://www.x.com/community/ppx/sdks#NVP
 
 Setup
 1. Copy the "lib" directory into your project.
