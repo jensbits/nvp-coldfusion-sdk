@@ -2,7 +2,7 @@ Name-value pair SDK for ColdFusion
 
 System Requirements
 ColdFusion 9 and above
-Railo 3.1.2.011 and above
+Railo 3.2 and above
 
 This is a rewrite of the name-value pair SDK. Components are written in full cfscript which is only supported by newer CFML engines. If you're using an older version of one of the CFML engines, please use the previous version of the name value pair SDK.
 
